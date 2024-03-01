@@ -35,17 +35,22 @@ function calcularTempo(tempoObjetivo) {
   dias %= 7;
 
   if (tempoFinal > 0) {
-      return semanas +" semanas " +dias +" dias " + horas + " horas " + minutos +
-        " minutos " + segundos + " segundos ";
+      return [semanas,dias,horas,minutos,segundos];
   } else {
-    return "Objetivo Finalizado";
+    return [0, 0, 0, 0];
   }
 
 }
 
 function atualizaConometro() {
+  document.getElementById("semanas0").textContent = calcularTempo(tempos[0] [0]);
+  document.getElementById("dias0").textContent = calcularTempo(tempos[1] [1]);
+  document.getElementById("horas0").textContent = calcularTempo(tempos[1] [2]);
+  document.getElementById("min0").textContent = calcularTempo(tempos[1] [3]);
+  document.getElementById("seg0").textContent = calcularTempo(tempos[1] [4]);
+
   for (let i = 0; i < contadores.length; i++) {
-    contadores[i].textContent = calcularTempo(tempos[i]);
+    //contadores[i].textContent = calcularTempo(tempos[i]);
   }
 }
 
