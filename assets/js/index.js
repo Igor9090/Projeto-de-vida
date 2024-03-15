@@ -37,24 +37,24 @@ function calcularTempo(tempoObjetivo) {
   if (tempoFinal > 0) {
       return [semanas,dias,horas,minutos,segundos];
   } else {
-    return [0, 0, 0, 0];
+    return [0, 0, 0, 0, 0];
   }
 
 }
 
-function atualizaConometro() {
-  document.getElementById("semanas0").textContent = calcularTempo(tempos[0] [0]);
-  document.getElementById("dias0").textContent = calcularTempo(tempos[1] [1]);
-  document.getElementById("horas0").textContent = calcularTempo(tempos[1] [2]);
-  document.getElementById("min0").textContent = calcularTempo(tempos[1] [3]);
-  document.getElementById("seg0").textContent = calcularTempo(tempos[1] [4]);
+function atualizaCronometro() {
+  
 
   for (let i = 0; i < contadores.length; i++) {
-    //contadores[i].textContent = calcularTempo(tempos[i]);
+    document.getElementById("semanas"+i).textContent = calcularTempo(tempos[i]) [0];
+    document.getElementById("dias"+i).textContent = calcularTempo(tempos[i]) [1];
+    document.getElementById("horas"+i).textContent = calcularTempo(tempos[i]) [2];
+    document.getElementById("min"+i).textContent = calcularTempo(tempos[i]) [3];
+    document.getElementById("seg"+i).textContent = calcularTempo(tempos[i]) [4];
   }
 }
 
-(function comecaConometro() {
-  atualizaConometro();
-  setInterval(atualizaConometro, 1000);
+(function comecaCronometro() {
+  atualizaCronometro();
+  setInterval(atualizaCronometro, 1000);
 }())
